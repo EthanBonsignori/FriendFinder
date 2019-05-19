@@ -23,7 +23,7 @@ const friends = [
     name: 'Andy',
     photo: 'https://i.pinimg.com/236x/4f/bb/48/4fbb4825cba6b7ce8abf86e9722c87cb--photos-google-photographs.jpg',
     scores: ['3', '1', '1', '1', '5', '5', '5', '4', '2', '1']
-  },
+  }
 ]
 
 module.exports = friends
