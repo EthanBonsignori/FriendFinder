@@ -6,16 +6,129 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
   <title>Friend Finder</title>
   <style>
-    
+    body, .page-footer {
+      background-color: #e3f2fd;
+      color: black;
+    }
+
+    .review {
+      height: 200px;
+    }
+
+    .review-img {
+      width: 80px;
+      height: 80px;
+      border: 1px solid black;
+    }
+
+    .review-stars {
+      color: #ffc107;
+    }
+
+    .review-text {
+      padding-left: 6rem;
+    }
+
+    .page-footer {
+      margin-top: 3rem;
+    }
   </style>  
 </head>
 <body>
-  <a class="waves-effect waves-light btn blue darken-4">
-    <i class="material-icons left">format_list_numbered</i>
-    Take the Survey!
-  </a>
+    <div class="container">
+    <h1 class="blue-text center" style="font-family: 'Questrial', sans-serif;">
+        Friend Finder
+    </h1>
+    <h5 class="center">Find <span style="font-weight: bold;">100% real</span> friends online!</h5>
+    <p style="margin-bottom: 0;" class="flow-text center">Welcome to Friend Finder!</p>
+    <p style="margin-top: 0;" class="flow-text">Our complicated algorithims have been honed over the years by matching thousands of people with a new friend in just ten easy <span style="text-decoration: line-through;">payments of $19.99</span> questions. Going back to the days of ancient China, we have perfected the ins and outs of what makes a good friend. Here at Friend Finder, we have a <span style="text-decoration: line-through;">giant warehouse</span> air-conditioned office full of <span style="text-decoration: line-through;">little kids</span> state-of-the-art computers running sophisticated code that is time-tested to match you with the perfect friend. Just check out what our loyal customers have to say about us!</p>
+
+    <!-- Reviews -->
+    <div class="row">
+
+      <h3 class="blue-text center">Recent Reviews</h3>
+
+      <div class="col s6">
+        <div class="card review">
+          <div class="card-content">
+            <span class="review-stars">
+              <i class="material-icons">star star star_half star_border star_border</i>
+            </span>
+            <span class="card-title">Review from Betty M.</span>
+            <img src="https://hookagency.com/wp-content/uploads/2018/02/hilarious-stock-photos-for-memes.jpg" alt="betty" class="circle review-img left">
+            <p class="review-text">Cowards</p>
+            <div class="center">
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6">
+        <div class="card review">
+          <div class="card-content">
+            <span class="review-stars">
+              <i class="material-icons">star_border star_border star_border star_border star_border</i>
+            </span>
+            <span class="card-title">Review from Mark Z.</span>
+            <img src="https://gl-images.condecdn.net/image/DLl1XeQ691J/crop/200/square/f/mark-zuckerberg_glamour_26jan16_pa_b.jpg" alt="zuck" class="circle review-img left">
+            <p class="review-text">You'll be hearing from my lawyers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6">
+          <div class="card review">
+            <div class="card-content">
+              <span class="review-stars">
+                <i class="material-icons">star star star star star</i>
+              </span>
+              <span class="card-title">Review from Rajesh S.</span>
+              <img src="https://www.capital.edu/uploadedimages/content/academics/faculty/600x600-saurav-roychoudhury.jpg" alt="rajesh" class="circle review-img left">
+              <p class="review-text">Christoph is my new best friend now!!1 Have fun lying you dirty liar Rahul</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s6">
+            <div class="card review">
+              <div class="card-content">
+                <span class="review-stars">
+                  <i class="material-icons red-text">star_border star_border star_border star_border star_border</i>
+                </span>
+                <span class="card-title">Review from H̵e̶n̶r̷y̸ ̶P̸.̵</span>
+                <img src="https://static.tumblr.com/fb11d941fc0f1878ed2ffd27cac41a76/beec4gn/1R3nhs1na/tumblr_static_4i2fvia0tauc0wcco88og0kw8.png" alt="error" class="circle review-img left">
+                <p class="review-text">HELP! I'm stuck in a survey question and can't get out!!!</p>
+              </div>
+            </div>
+          </div>
+
+    </div> <!-- End Review Row -->
+
+    <div class="center">
+      <a href="/survey" class="waves-effect waves-light btn blue darken-3">
+        <i class="material-icons left">format_list_numbered</i>
+        Take the Survey
+      </a>
+    </div>
+
+  </div> <!-- End Container -->
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 offset-l2 s12">
+          <h5>Links</h5>
+          <ul>
+            <li><a href="/api/friends">API Friends (List of all friends as JSON)</a></li>
+            <li><a href="https://github.com/EthanBonsignori/FriendFinder" target="blank">Github Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src='node_modules/jquery/dist/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
