@@ -296,7 +296,15 @@
             scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val(), ]
           }
           console.log(userData)
-          $('#result-modal').modal('open')
+          
+          // Display modal with friend after post
+          const currUrl = window.location.origin
+          $.post(`${currUrl}/api/friends`, userData, (res) => {
+            console.log(res)
+            $('#friend-name').text(res.name)
+            $('#friend-pic').attr('src', res.photo)
+            $('#result-modal').modal('open')
+          })
         }
       })
       

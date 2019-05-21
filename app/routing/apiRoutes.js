@@ -11,7 +11,7 @@ const apiRoutes = (app) => {
     const match = {
       name: '',
       photo: '',
-      difference: null
+      difference: Infinity
     }
 
     for (let i = 0; i < friends.length; i++) {
