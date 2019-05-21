@@ -32,6 +32,14 @@
     .dropdown-content li>a, .dropdown-content li>span {
       color: #2196f3 !important;
     }
+    .input-field .helper-text {
+      opacity: 0;
+      color: red;
+    }
+    #select-error {
+      opacity: 0;
+      color: red;
+    }
   </style>  
 </head>
 <body>
@@ -47,16 +55,18 @@
       <!-- Name / Photo Input -->
       <div class="row">
         <form class="col s12">
-          <div class="row">
+          <div class="row" style="margin-bottom: 0px;">
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Name</label>
+              <input id="name" type="text" class="required">
+              <label for="name">Name</label>
+              <span class="helper-text">This field is required</span>
             </div>
             <div class="input-field col s6">
               <i class="material-icons prefix">photo</i>
-              <input id="icon_telephone" type="text" class="validate">
-              <label for="icon_telephone">Profile Picture (Direct URL)</label>
+              <input id="photo-url" type="text" class="required">
+              <label for="photo-url">Profile Picture (Direct URL)</label>
+              <span class="helper-text">This field is required</span>
             </div>
           </div>
         </form>
@@ -66,7 +76,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>I generally find myself sympathizing with the russian cause.</p>
-          <select>
+          <select id="q1" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -81,7 +91,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>When I travel I feel homesick for The Motherland.</p>
-          <select>
+          <select id="q2" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -96,7 +106,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>Vodka is the best liqour.</p>
-          <select>
+          <select id="q3" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -111,7 +121,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>I think the bear is a good choice for the Russian National Animal.</p>
-          <select>
+          <select id="q4" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -126,7 +136,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>If I lost all my roubles gambling I would beg in the street.</p>
-          <select>
+          <select id="q5" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -141,7 +151,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>Vladimir Putin.</p>
-          <select>
+          <select id="q6" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">5 (Strongly Agree)</option>
             <option value="2">5 (Strongly Agree)</option>
@@ -156,7 +166,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>When it is sub-zero temperatures and snowing I feel at home.</p>
-          <select>
+          <select id="q7" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -171,7 +181,7 @@
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>I feel that the Russian government is corrupt.</p>
-          <select>
+          <select id="q8" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -179,14 +189,14 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
           </select>
-          <label>Question 3</label>
+          <label>Question 8</label>
         </div>
       </div>
 
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>I felt proud after contributing in this years' Subbotnik</p>
-          <select>
+          <select id="q9" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -194,14 +204,14 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
           </select>
-          <label>Question 4</label>
+          <label>Question 9</label>
         </div>
       </div>
 
       <div class="input-field col s6">
         <div class="select-wrapper">
           <p>I am happy to call Russia home.</p>
-          <select>
+          <select id="q10" class="required">
             <option value="" selected>Choose your option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -209,20 +219,37 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
           </select>
-          <label>Question 5</label>
+          <label>Question 10</label>
         </div>
       </div>
 
+      <div class="center">
+        <span id="select-error">You must select an answer for all questions</span>
+      </div>
+
+      <div class="center">
+        <a id="submit-survey" class="waves-effect waves-light btn blue darken-3" style="margin-top: 2rem;">
+          <i class="material-icons left">check</i>
+          Submit Survey
+        </a>
+      </div>
+
     </div> <!-- End Survey Row -->
-
-    <div class="center">
-      <a href="/survey" class="waves-effect waves-light btn blue darken-3">
-        <i class="material-icons left">format_list_numbered</i>
-        Submit Survey
-      </a>
-    </div>
-
   </div> <!-- End Container -->
+
+  <!-- Result Modal -->
+  <div id="result-modal" class="modal">
+    <div class="modal-content">
+      <h4>Your new best friend!</h4>
+      <div class="center">
+        <h5 id="friend-name" style="font-weight: bold;"></h4>
+        <img id="friend-pic" src="" width="500px" height="auto" alt="your new friend">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 
   <footer class="page-footer">
     <div class="container">
@@ -243,7 +270,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
+      // Init materialize select boxes
       $('select').formSelect()
+      // Init materialize modals
+      $('.modal').modal()
+
+      $('#submit-survey').on('click', () => {
+        let errors = 0
+        $('.required').each((index, value) => {
+          if ($(value).val() === '') {
+            errors++
+            $(value).siblings('span').css('opacity', '1')
+          } else {
+            $(value).siblings('span').css('opacity', '0')
+          }
+        })
+        if (errors > 0) {
+          console.log('missing inputs:', errors)
+          $('#select-error').css('opacity', '1')
+        } else {
+          $('#select-error').css('opacity', '0')
+          const userData = {
+            name: $('#name').val(),
+            photo: $('#photo-url').val(),
+            scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val(), ]
+          }
+          console.log(userData)
+          $('#result-modal').modal('open')
+        }
+      })
       
     })
     
